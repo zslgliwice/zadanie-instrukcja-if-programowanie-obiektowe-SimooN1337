@@ -2,30 +2,39 @@
 <html lang="pl">
 
 <head>
-
 	<meta charset="utf-8">
 	<title>3 - Instrukcja warunkowa w JavaScript</title>
 	<link href="arkusz-cwiczenia.css" rel="stylesheet">
-	
 </head>
 
 <body>
-
 	P = ( <input type="number" id="x"> , <input type="number" id="y"> )
-
 	<input type="submit" value="Sprawdź ćwiartkę" onclick="ktora_cwiartka()">
-
 	<div id="wynik"></div>
 	
 	<script>
-	
-		function ktora_cwiartka()
-		{
-			
-			
+		function ktora_cwiartka() {
+			var x = parseFloat(document.getElementById("x").value);
+			var y = parseFloat(document.getElementById("y").value);
+			var wynikDiv = document.getElementById("wynik");
+
+			if (x == 0 && y == 0) {
+				wynikDiv.innerHTML = "Punkt P=(0,0) jest początkiem układu współrzędnych";
+			} else if (x && 0 || y == 0) {
+				wynikDiv.innerHTML = "Punkt leży na jednej z osi układu";
+			} else if (x > 0 && y > 0) {
+				wynikDiv.innerHTML = "Punkt leży w I ćwiartce";
+			} else if (x < 0 && y > 0) {
+				wynikDiv.innerHTML = "Punkt leży w II ćwiartce";
+			} else if (x < 0 && y < 0) {
+				wynikDiv.innerHTML = "Punkt leży w III ćwiartce";
+			} else {
+				wynikDiv.innerHTML = "Punkt leży w IV ćwiartce";
+			}
+			if (x == 15 && y == 96) {
+				wynikDiv.innerHTML = " Kartezjusz to francuski uczony: matematyk, fizyk i filozof, jeden z najwybitniejszych intelektualistów XVII wieku, uznawany również za ojca filozofii nowożytnej";
+			}
 		}
-
 	</script>
-
 </body>
 </html>

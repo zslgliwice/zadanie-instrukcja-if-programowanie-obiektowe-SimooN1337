@@ -12,7 +12,7 @@
 <body>
 
 	<label>
-		Podaj numer dnia tygodnia: <input type="number">
+		Podaj numer dnia tygodnia: <input type="number" id="tydzien">
 	</label>
 	
 	<input type="submit" value="Zobacz nazwę dnia" onclick="getDayName()">
@@ -23,7 +23,45 @@
 	
 		function getDayName()
 		{
-					
+
+			var a = document.getElementById("tydzien").value;
+			if (a == 1){
+				document.getElementById("wynik").style.color = "white";
+				document.getElementById("wynik").innerHTML = "Pierwszy dzień tygodnia to Monday - poniedziałek";
+			}
+			else if (a == 2){
+				document.getElementById("wynik").style.color = "white";
+				document.getElementById("wynik").innerHTML = "Drugi dzień tygodnia to Tuesday - wtorek";
+			}
+			else if (a == 3){
+				document.getElementById("wynik").style.color = "white";
+				document.getElementById("wynik").innerHTML = "Trzeci dzień tygodnia to Wednesday - środa";
+			}
+			else if (a == 4){
+				document.getElementById("wynik").style.color = "white";
+				document.getElementById("wynik").innerHTML = "DCzwarty dzień tygodnia to Thursday - czwartek";
+			}
+			else if (a == 5){
+				document.getElementById("wynik").style.color = "yellow";
+				document.getElementById("wynik").innerHTML = "Piąty dzień tygodnia to Friday - piątek, piąteczek, piątunio";
+			}
+			else if (a == 6){
+				document.getElementById("wynik").style.color = "green";
+				document.getElementById("wynik").innerHTML = "Szósty dzień tygodnia to Saturday - sobota";
+			}
+			else if (a == 7){
+				document.getElementById("wynik").style.color = "green";
+				document.getElementById("wynik").innerHTML = "Pierwszy dzień tygodnia to Sunday - niedziela";
+			}
+			else if (a > 7){
+				document.getElementById("wynik").style.color = "red";
+				document.getElementById("wynik").innerHTML = "To nie jest prawidłowy numer dnia tygodnia!";
+			}
+			else if (a < 1){
+				document.getElementById("wynik").style.color = "red";
+				document.getElementById("wynik").innerHTML = "To nie jest prawidłowy numer dnia tygodnia!";
+			}
+
 			
 		}
 
